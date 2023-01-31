@@ -6,7 +6,7 @@ name: {
 	required: true,
 },
 
-descriptions: {
+description: {
 	type: String,
 	required: true,
 },
