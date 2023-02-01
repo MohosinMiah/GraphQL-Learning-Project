@@ -15,8 +15,8 @@ function App() {
 		<Header/>
 		
 		<div className="jumbotron text-center">
-			<h1>My First Bootstrap Page</h1>
-			<p>Resize this responsive page to see the effect!</p> 
+			<h1>Graph QL Learning</h1>
+			<p>Graph QL is Interesting</p> 
 		</div>
 		<Clients />
 		
