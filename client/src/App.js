@@ -3,6 +3,7 @@ import AddClientModule from './AddClientModule';
 import './App.css';
 import Clients from './components/Clients';
 import Header from './components/Header';
+import Projects from './components/Projects';
 
 
 const cache = new InMemoryCache({
@@ -41,7 +42,9 @@ function App() {
 		</div>
 		<AddClientModule />
 		<Clients />
-		
+		<div className="mt-10">
+			<Projects />
+		</div>
 	</div>
 	</ApolloProvider>
 );
