@@ -10,6 +10,13 @@ export default function ClientRow({client}) {
 		refetchQueries: [{
 			query: GET_CLIENTS
 		}]
+		// update(cache) {
+		// 	const { clients } = cache.readQuery({ query: GET_CLIENTS });
+		// 	cache.writeQuery({
+		// 		query: GET_CLIENTS,
+		// 		data: { clients: clients.filter((client) => client.id !== client.id) }
+		// 	});
+		// }
 	});
 
 	const handleDelete = () => {

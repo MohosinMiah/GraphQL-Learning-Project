@@ -1,11 +1,32 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import AddClientModule from './AddClientModule';
 import './App.css';
 import Clients from './components/Clients';
 import Header from './components/Header';
 
+
+const cache = new InMemoryCache({
+	typePolicies: {
+		Query: {
+			fields: {
+				clients: {
+					merge(existing, incoming) {
+						return incoming;
+					}
+				},
+				projects: {
+					merge(existing, incoming) {
+						return incoming;
+					}
+				}
+			}
+		}
+	}
+
+});
 const client = new ApolloClient({
 	uri: 'http://localhost:8000/graphql',
-	cache: new InMemoryCache(),
+	cache: cache,
 });
 
 function App() {
@@ -18,6 +39,7 @@ function App() {
 			<h1>Graph QL Learning</h1>
 			<p>Graph QL is Interesting</p> 
 		</div>
+		<AddClientModule />
 		<Clients />
 		
 	</div>
